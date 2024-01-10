@@ -1,7 +1,7 @@
 {
   "name": "@xqsit94/vite-vue3-ts-starter",
   "version": "1.0.0",
-  "description": "A starter template for Vue3 with Vite and TypeScript includes Vitest, Eslint, Prettier, Husky, and Unocss",
+  "description": "A starter template for Vue3 with Vite and TypeScript includes Vitest, Eslint, Prettier, and Husky",
   "type": "module",
   "scripts": {
     "dev": "vite",
