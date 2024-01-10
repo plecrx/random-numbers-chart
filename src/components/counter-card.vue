@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia'
-import { useCounterStore } from '~/stores/counter'
+import {useCounterStore} from "@/stores/counter.ts";
 
 defineProps<{ msg: string }>()
 

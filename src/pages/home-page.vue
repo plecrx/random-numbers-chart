@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import CounterCard from '@/components/counter-card.component.vue'
+import CounterCard from '@/components/counter-card.vue'
 </script>
 
 <template>
