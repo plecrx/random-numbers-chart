@@ -1,16 +1,21 @@
-import { describe, it, expect } from 'vitest'
+import PageLayout from "@/layouts/page-layout.vue";
+import {describe, it, expect, beforeEach} from 'vitest'
 
-import { shallowMount } from '@vue/test-utils'
+import {shallowMount, VueWrapper} from '@vue/test-utils'
 import { createPinia, setActivePinia } from 'pinia'
 import HomePage from '@/pages/home-page.vue'
-import CounterCard from '@/components/counter-card.vue'
-
 describe('Home page', () => {
-    it('should display a counter card', () => {
+    let wrapper: VueWrapper
+    beforeEach(() => {
         setActivePinia(createPinia())
-        const wrapper = shallowMount(HomePage)
-        const counterCard = wrapper.findComponent(CounterCard)
+        wrapper = shallowMount(HomePage)
+    })
 
-        expect(counterCard.exists()).toBe(true)
+    it('should display a page layout', () => {
+        const pageLayout = wrapper.findComponent(PageLayout)
+
+        console.log(wrapper.html())
+
+        expect(pageLayout.exists()).toBe(true)
     })
 })
