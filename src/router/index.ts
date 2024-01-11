@@ -15,7 +15,7 @@ const router = createRouter({
                     min: 1,
                     max: 10,
                     col: 1,
-                    base: 2,
+                    base: 10,
                     format: 'plain'
                 })
         }
