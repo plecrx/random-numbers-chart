@@ -5,10 +5,18 @@ import PageLayout from '@/layouts/page-layout.vue'
 import { useRandomIntegersStore } from '@/stores/useRandomIntegers.store.ts'
 import { storeToRefs } from 'pinia'
 import { onBeforeMount } from 'vue'
+import { SearchRandomIntegersParams } from '../features/integersList/searchRandomIntegers.ts'
 const { integersArray } = storeToRefs(useRandomIntegersStore())
 const { searchIntegers } = useRandomIntegersStore()
 
-const params = { num: 100, min: 0, max: 10, col: 1, base: 10, format: 'plain' }
+const params: SearchRandomIntegersParams = {
+    num: 100,
+    min: 0,
+    max: 10,
+    col: 1,
+    base: 10,
+    format: 'plain'
+}
 const handleSearchButtonClick = () => {
     searchIntegers(params)
 }
