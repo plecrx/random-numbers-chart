@@ -1,25 +1,33 @@
 import {
     searchRandomIntegers,
-    SearchRandomIntegersParams
+    SearchRandomIntegersParams,
+    SearchRandomIntegersResponse
 } from '@/features/integersList/searchRandomIntegers.ts'
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
-export const useRandomIntegersStore = defineStore('integersList', () => {
-    const integersArray = ref<Record<number, number>>([])
 
-    const searchIntegers = async (params: SearchRandomIntegersParams) => {
-        integersArray.value = groupIntegersByValue(await searchRandomIntegers(params))
-    }
+export type IntegersStoreDependencies = {
+    searchRandomIntegers: SearchRandomIntegersResponse
+}
+export const createRandomIntegersStore = ({ searchRandomIntegers }: IntegersStoreDependencies) =>
+    defineStore('integersList', () => {
+        const integersArray = ref<Record<number, number>>({})
 
-    const groupIntegersByValue = (integersArray: string[]) => {
-        const occurrences: Record<string, number> = {};
+        const searchIntegers = async (params: SearchRandomIntegersParams) => {
+            integersArray.value = groupIntegersByValue(await searchRandomIntegers(params))
+        }
 
-        integersArray.forEach((integer) => {
-            occurrences[integer] = (occurrences[integer] || 0) + 1;
-        });
+        const groupIntegersByValue = (integersArray: string[]) => {
+            const occurrences: Record<string, number> = {}
 
-        return occurrences;
-    }
+            integersArray.forEach((integer) => {
+                occurrences[integer] = (occurrences[integer] || 0) + 1
+            })
 
-    return { integersArray, searchIntegers }
-})
+            return occurrences
+        }
+
+        return { integersArray, searchIntegers }
+    })
+
+export const useRandomIntegersStore = () => createRandomIntegersStore({ searchRandomIntegers })

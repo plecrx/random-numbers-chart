@@ -2,13 +2,13 @@ import { beforeEach, describe, expect, it, vitest } from 'vitest'
 import {
     createSearchRandomIntegers,
     SearchRandomIntegersDependencies,
-    SearchRandomIntegersParams
+    SearchRandomIntegersParams, SearchRandomIntegersResponse
 } from '../../../src/features/integersList/searchRandomIntegers'
 import { Mocks } from '../../utils'
 
 describe('Search Random Integers Feature', () => {
     let mocks: Mocks<SearchRandomIntegersDependencies>
-    let searchRandomIntegers: (params: SearchRandomIntegersParams) => Promise<string[]>
+    let searchRandomIntegers: SearchRandomIntegersResponse
     beforeEach(() => {
         mocks = { httpPost: vitest.fn() }
         searchRandomIntegers = createSearchRandomIntegers(mocks)
