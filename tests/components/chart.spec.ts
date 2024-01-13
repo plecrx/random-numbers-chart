@@ -49,4 +49,11 @@ describe('Chart', () => {
         expect(first.text()).toBe('15')
         expect(second.text()).toBe('20')
     })
+
+    it('should render the amount of occurrences', async () => {
+        await wrapper.setProps({ recordValues: { '15': '1' } })
+        const occurrenceLabel = wrapper.find('[data-testid="chart-bar-occurrence-amount"]')
+
+        expect(occurrenceLabel.text()).toBe('1')
+    })
 })

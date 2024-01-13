@@ -4,13 +4,16 @@ import Chart from '@/components/chart.vue'
 import PageLayout from '@/layouts/page-layout.vue'
 import { useRandomIntegersStore } from '@/stores/useRandomIntegers.store.ts'
 import { storeToRefs } from 'pinia'
-
+import { onBeforeMount } from 'vue'
 const { integersArray } = storeToRefs(useRandomIntegersStore())
 const { searchIntegers } = useRandomIntegersStore()
 
+const params = { num: 100, min: 0, max: 10, col: 1, base: 10, format: 'plain' }
 const handleSearchButtonClick = () => {
-    searchIntegers({ num: 20, min: 1, max: 10, col: 1, base: 2, format: 'plain' })
+    searchIntegers(params)
 }
+
+onBeforeMount(() => searchIntegers(params))
 </script>
 
 <template>

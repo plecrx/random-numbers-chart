@@ -2,7 +2,7 @@
 defineProps<{
     recordValues: Record<string | number, number>
 }>()
-const getBarHeight = (value: number) => `${value * 10}px`
+const getBarHeight = (value: number) => `${value * 20}px`
 </script>
 
 <template>
@@ -14,6 +14,7 @@ const getBarHeight = (value: number) => `${value * 10}px`
             :style="{ height: `${getBarHeight(occurrences)}` }"
             data-testid="chart-bar"
         >
+            <span class="occurrence-label" data-testid="chart-bar-occurrence-amount">{{ occurrences }}</span>
             <span class="label" data-testid="chart-bar-label">{{ label }}</span>
         </div>
     </div>
@@ -42,5 +43,9 @@ const getBarHeight = (value: number) => `${value * 10}px`
     bottom: -20px;
     left: 50%;
     transform: translateX(-50%);
+}
+
+.occurrence-label {
+    color: whitesmoke;
 }
 </style>
