@@ -30,4 +30,4 @@ export const createRandomIntegersStore = ({ searchRandomIntegers }: IntegersStor
         return { integersArray, searchIntegers }
     })
 
-export const useRandomIntegersStore = () => createRandomIntegersStore({ searchRandomIntegers })
+export const useRandomIntegersStore = () => createRandomIntegersStore({ searchRandomIntegers })()
