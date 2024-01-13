@@ -1,18 +1,18 @@
-# Vite Vue 3 TypeScript Starter
+# Random Numbers Chart
 
-A rapid development starter kit using Vite, Vue3, TypeScript, Vitest, ESLint, Prettier, and Husky.
+This project fetch Random API Integers to populate a Chart created with Vanilla CSS.
+It uses Vite, Vue3, TypeScript, Vitest, ESLint, Prettier, and Husky.
 
 ### Features
 
 - 🚀 Fast development and build times with Vite
 - 🖖 Vue 3 for UI components
-- 🧭 Vue Router for client-side routing
 - 🗄️ Pinia for state management
 - 🦋 TypeScript for static type checking
-- 📚 Interactive UI development and testing with Storybook
 - ✅ Unit Testing with Vitest
 - 🧹 Linting and formatting with ESLint and Prettier
 - 🐶 Pre-commit checks using Husky
+- 🧭 Chart created with Vanilla CSS
 
 ### Commands
 
