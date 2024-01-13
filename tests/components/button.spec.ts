@@ -6,11 +6,7 @@ import { shallowMount, VueWrapper } from '@vue/test-utils'
 describe('Button', () => {
     let wrapper: VueWrapper
     beforeEach(() => {
-        wrapper = shallowMount(Button, {
-            props: {
-                recordValues: { 20: 2, 15: 1 }
-            }
-        })
+        wrapper = shallowMount(Button)
     })
 
     it('should render properly', () => {

@@ -8,11 +8,24 @@ export type SearchRandomIntegersParams = {
     min: number
     num: number
 }
-export const searchRandomIntegers = async (params: SearchRandomIntegersParams): Promise<string[]> => {
-    const { num, min, max, col, base, format } = params
 
-    return await POST(
-        `/integers/?num=${num}&min=${min}&max=${max}&col=${col}&base=${base}&format=${format}`,
-        null
-    )
+export type SearchRandomIntegersDependencies = {
+    httpPost: typeof POST
 }
+
+export type SearchRandomIntegersResponse = (params: SearchRandomIntegersParams) => Promise<string[]>
+
+export const createSearchRandomIntegers =
+    (dependencies: SearchRandomIntegersDependencies): SearchRandomIntegersResponse =>
+    async (params) => {
+        const { num, min, max, col, base, format } = params
+        const { httpPost } = dependencies
+        return await httpPost(
+            `/integers/?num=${num}&min=${min}&max=${max}&col=${col}&base=${base}&format=${format}`,
+            null
+        )
+    }
+
+export const searchRandomIntegers: SearchRandomIntegersResponse = createSearchRandomIntegers({
+    httpPost: POST
+})

@@ -1,7 +1,7 @@
-import PageLayout from "@/layouts/page-layout.vue";
-import {describe, it, expect, beforeEach} from 'vitest'
+import PageLayout from '@/layouts/page-layout.vue'
+import { describe, it, expect, beforeEach } from 'vitest'
 
-import {shallowMount, VueWrapper} from '@vue/test-utils'
+import { shallowMount, VueWrapper } from '@vue/test-utils'
 import { createPinia, setActivePinia } from 'pinia'
 import HomePage from '@/pages/home-page.vue'
 describe('Home page', () => {
