@@ -16,14 +16,13 @@ It uses Vite, Vue3, TypeScript, Vitest, ESLint, Prettier, and Husky.
 
 ### Commands
 
-#### Using Yarn
-
 ```bash
 yarn dev             # Run the app in development mode.
 yarn build           # Build the app for production using type-check and build-only.
 yarn preview         # Serve the built app for preview.
 yarn test:watch      # Run Vitest in watch mode.
 yarn test            # Run Vitest without watch.
+yarn type-check      # Run vue-tsc to compile types.
 yarn lint            # Run ESLint to check for code issues.
 yarn format          # Run Prettier to format code.
 yarn postinstall     # Install Husky Git hooks.
